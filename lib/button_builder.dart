@@ -121,7 +121,7 @@ class SignInButtonBuilder extends StatelessWidget {
               //       horizontal: 13,
               //     ),
               width: iconWidth ?? 38,
-              child: _getIconOrImage(iconWidth),
+              child: _getIconOrImage(iconSize),
             ),
             Text(
               text,

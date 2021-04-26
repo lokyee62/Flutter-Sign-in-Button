@@ -72,6 +72,7 @@ class SignInPage extends StatelessWidget {
           Divider(),
           SignInButton(
             Buttons.Apple,
+            iconSize: 20,
             onPressed: () {
               _showButtonPressDialog(context, 'Apple');
             },
