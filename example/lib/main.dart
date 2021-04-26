@@ -49,6 +49,8 @@ class SignInPage extends StatelessWidget {
           Divider(),
           SignInButton(
             Buttons.Google,
+            iconWidth: 40,
+            height: 40,
             onPressed: () {
               _showButtonPressDialog(context, 'Google');
             },
@@ -63,7 +65,7 @@ class SignInPage extends StatelessWidget {
           ),
           Divider(),
           SignInButton(
-            Buttons.FacebookCircle,
+            Buttons.FacebookSquare,
             onPressed: () {
               _showButtonPressDialog(context, 'FacebookNew');
             },

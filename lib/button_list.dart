@@ -6,6 +6,7 @@ enum Buttons {
   Facebook,
   FacebookNew,
   FacebookCircle,
+  FacebookSquare,
   GitHub,
   Apple,
   AppleDark,

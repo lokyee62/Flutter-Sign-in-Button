@@ -56,7 +56,7 @@ class SignInButton extends StatelessWidget {
     this.padding = const EdgeInsets.all(0),
     this.shape,
     this.text,
-    this.elevation = 2.0,
+    this.elevation = 0,
     this.height,
     this.width,
     this.fontSize,
@@ -99,6 +99,7 @@ class SignInButton extends StatelessWidget {
                   package: 'flutter_signin_button',
                 ),
                 height: height ?? 36.0,
+                width: iconWidth ?? 36,
               ),
             ),
           ),
@@ -119,14 +120,17 @@ class SignInButton extends StatelessWidget {
       case Buttons.Facebook:
       case Buttons.FacebookNew:
       case Buttons.FacebookCircle:
+      case Buttons.FacebookSquare:
         return SignInButtonBuilder(
           elevation: elevation,
           key: ValueKey("Facebook"),
           mini: mini,
           text: text ?? 'Sign in with Facebook',
-          icon: button == Buttons.FacebookCircle
-              ? FontAwesomeIcons.facebook
-              : FontAwesomeIcons.facebookF,
+          icon: button == Buttons.FacebookSquare
+              ? FontAwesomeIcons.facebookSquare
+              : button == Buttons.FacebookCircle
+                  ? FontAwesomeIcons.facebook
+                  : FontAwesomeIcons.facebookF,
           iconColor: iconColor ?? Colors.white,
           textColor: textColor ?? Colors.white,
           image: button == Buttons.FacebookNew

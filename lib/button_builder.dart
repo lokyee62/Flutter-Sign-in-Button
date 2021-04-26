@@ -113,9 +113,10 @@ class SignInButtonBuilder extends StatelessWidget {
       child: Center(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              alignment: Alignment.center,
+              alignment: Alignment.centerLeft,
               // padding: innerPadding ??
               //     EdgeInsets.symmetric(
               //       horizontal: 13,
