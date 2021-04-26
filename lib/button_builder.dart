@@ -42,7 +42,7 @@ class SignInButtonBuilder extends StatelessWidget {
   /// on material button, hence, comment out.
   final ShapeBorder? shape;
 
-  /// elevation has defalt value of 2.0
+  /// elevation has defalt value of 0
   final double elevation;
 
   /// the height of the button
@@ -50,6 +50,10 @@ class SignInButtonBuilder extends StatelessWidget {
 
   /// width is default to be 1/1.5 of the screen
   final double? width;
+
+  final double? iconWidth;
+
+  final double? iconSize;
 
   /// The constructor is self-explanatory.
   SignInButtonBuilder({
@@ -67,10 +71,12 @@ class SignInButtonBuilder extends StatelessWidget {
     this.padding,
     this.innerPadding,
     this.mini = false,
-    this.elevation = 2.0,
+    this.elevation = 0,
     this.shape,
     this.height,
     this.width,
+    this.iconWidth,
+    this.iconSize,
   });
 
   /// The build funtion will be help user to build the signin button widget.
@@ -97,7 +103,7 @@ class SignInButtonBuilder extends StatelessWidget {
       return Container(
         width: height ?? 35.0,
         height: width ?? 35.0,
-        child: _getIconOrImage(),
+        child: _getIconOrImage(iconSize),
       );
     }
     return Container(
@@ -108,12 +114,14 @@ class SignInButtonBuilder extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: innerPadding ??
-                  EdgeInsets.symmetric(
-                    horizontal: 13,
-                  ),
-              child: _getIconOrImage(),
+            Container(
+              alignment: Alignment.center,
+              // padding: innerPadding ??
+              //     EdgeInsets.symmetric(
+              //       horizontal: 13,
+              //     ),
+              width: iconWidth ?? 38,
+              child: _getIconOrImage(iconWidth),
             ),
             Text(
               text,
@@ -130,13 +138,13 @@ class SignInButtonBuilder extends StatelessWidget {
   }
 
   /// Get the icon or image widget
-  Widget? _getIconOrImage() {
+  Widget? _getIconOrImage(double? iconSize) {
     if (image != null) {
       return image;
     }
     return Icon(
       icon,
-      size: 20,
+      size: iconSize ?? 20,
       color: this.iconColor,
     );
   }

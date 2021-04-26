@@ -44,7 +44,7 @@ class SignInPage extends StatelessWidget {
               _showButtonPressDialog(context, 'Email');
             },
             backgroundColor: Colors.blueGrey[700]!,
-            width: 220.0,
+            width: double.infinity,
           ),
           Divider(),
           SignInButton(
@@ -52,6 +52,7 @@ class SignInPage extends StatelessWidget {
             onPressed: () {
               _showButtonPressDialog(context, 'Google');
             },
+            width: double.infinity,
           ),
           Divider(),
           SignInButton(
@@ -62,10 +63,11 @@ class SignInPage extends StatelessWidget {
           ),
           Divider(),
           SignInButton(
-            Buttons.FacebookNew,
+            Buttons.FacebookCircle,
             onPressed: () {
               _showButtonPressDialog(context, 'FacebookNew');
             },
+            width: double.infinity,
           ),
           Divider(),
           SignInButton(
@@ -105,6 +107,7 @@ class SignInPage extends StatelessWidget {
               SignInButton(
                 Buttons.LinkedIn,
                 mini: true,
+                width: 35,
                 onPressed: () {
                   _showButtonPressDialog(context, 'LinkedIn (mini)');
                 },
@@ -112,6 +115,7 @@ class SignInPage extends StatelessWidget {
               SignInButton(
                 Buttons.Tumblr,
                 mini: true,
+                width: 35,
                 onPressed: () {
                   _showButtonPressDialog(context, 'Tumblr (mini)');
                 },
@@ -119,6 +123,7 @@ class SignInPage extends StatelessWidget {
               SignInButton(
                 Buttons.Facebook,
                 mini: true,
+                width: 35,
                 onPressed: () {
                   _showButtonPressDialog(context, 'Facebook (mini)');
                 },
@@ -127,6 +132,7 @@ class SignInPage extends StatelessWidget {
                 icon: Icons.email,
                 text: "Ignored for mini button",
                 mini: true,
+                width: 35,
                 onPressed: () {
                   _showButtonPressDialog(context, 'Email (mini)');
                 },
