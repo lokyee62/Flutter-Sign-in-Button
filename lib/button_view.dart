@@ -40,6 +40,8 @@ class SignInButton extends StatelessWidget {
 
   final Color? textColor;
 
+  final Color? iconColor;
+
   /// The constructor is fairly self-explanatory.
   SignInButton(
     this.button, {
@@ -53,6 +55,7 @@ class SignInButton extends StatelessWidget {
     this.fontSize,
     this.backgroundColor,
     this.textColor,
+    this.iconColor,
   }) : assert(
             mini != true ||
                 !(button == Buttons.Google ||
@@ -103,12 +106,17 @@ class SignInButton extends StatelessWidget {
         );
       case Buttons.Facebook:
       case Buttons.FacebookNew:
+      case Buttons.FacebookCircle:
         return SignInButtonBuilder(
           elevation: elevation,
           key: ValueKey("Facebook"),
           mini: mini,
           text: text ?? 'Sign in with Facebook',
-          icon: FontAwesomeIcons.facebookF,
+          icon: button == Buttons.FacebookCircle
+              ? FontAwesomeIcons.facebook
+              : FontAwesomeIcons.facebookF,
+          iconColor: iconColor ?? Colors.white,
+          textColor: textColor ?? Colors.white,
           image: button == Buttons.FacebookNew
               ? ClipRRect(
                   child: Image(
@@ -309,6 +317,7 @@ class SignInButton extends StatelessWidget {
           mini: mini,
           text: text ?? 'Sign in with Email',
           icon: Icons.email,
+          iconColor: iconColor ?? Colors.white,
           onPressed: onPressed,
           padding: padding,
           textColor: textColor ?? Colors.white,

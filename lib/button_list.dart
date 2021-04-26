@@ -5,6 +5,7 @@ enum Buttons {
   GoogleDark,
   Facebook,
   FacebookNew,
+  FacebookCircle,
   GitHub,
   Apple,
   AppleDark,
